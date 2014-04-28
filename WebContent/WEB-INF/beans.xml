@@ -1,0 +1,7 @@
+<!-- 
+<beans>
+	<interceptors>
+		<class>br.com.notasfiscais.interceptor.TransactionalInterceptor</class>
+	</interceptors>
+</beans>
+	 -->
