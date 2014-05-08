@@ -1,0 +1,45 @@
+2014-05-07 23:15:39.278 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:15:39.280 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:15:39.294 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:16:08.425 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:16:08.428 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:16:08.430 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:17:04.551 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:17:04.553 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:17:04.555 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:17:19.294 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:17:19.297 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:17:19.300 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:19:54.613 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:19:54.618 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:19:54.620 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-07 23:19:54.710 [INFO] org.hibernate.jpa.internal.util.LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: lulu
+	...]
+2014-05-07 23:19:55.060 [INFO] org.hibernate.Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2014-05-07 23:19:55.061 [INFO] org.hibernate.cfg.Environment:239 - HHH000206: hibernate.properties not found
+2014-05-07 23:19:55.063 [INFO] org.hibernate.cfg.Environment:346 - HHH000021: Bytecode provider name : javassist
+2014-05-07 23:19:55.538 [INFO] org.hibernate.annotations.common.Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2014-05-07 23:19:55.583 [WARN] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2014-05-07 23:19:55.610 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/lulu]
+2014-05-07 23:19:55.611 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=root, password=****}
+2014-05-07 23:19:55.611 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2014-05-07 23:19:55.612 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2014-05-07 23:19:57.273 [INFO] org.hibernate.dialect.Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014-05-07 23:19:57.767 [INFO] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2014-05-07 23:19:58.567 [INFO] org.hibernate.tool.hbm2ddl.SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2014-05-07 23:19:58.570 [INFO] org.hibernate.tool.hbm2ddl.SchemaUpdate:193 - HHH000102: Fetching database metadata
+2014-05-07 23:19:58.574 [INFO] org.hibernate.tool.hbm2ddl.SchemaUpdate:205 - HHH000396: Updating schema
+2014-05-07 23:19:58.580 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Cliente
+2014-05-07 23:19:58.583 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Contato
+2014-05-07 23:19:58.587 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Fornecedor
+2014-05-07 23:19:58.589 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Produto
+2014-05-07 23:19:58.591 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Cliente
+2014-05-07 23:19:58.593 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Contato
+2014-05-07 23:19:58.595 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Fornecedor
+2014-05-07 23:19:58.597 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Produto
+2014-05-07 23:19:58.598 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Cliente
+2014-05-07 23:19:58.600 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Contato
+2014-05-07 23:19:58.602 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Fornecedor
+2014-05-07 23:19:58.603 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Produto
+2014-05-07 23:20:03.313 [INFO] org.hibernate.tool.hbm2ddl.SchemaUpdate:242 - HHH000232: Schema update complete
