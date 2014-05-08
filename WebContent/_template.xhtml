@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><ui:insert name="title">SAMBuild Vendas</ui:insert></title>
@@ -12,18 +13,42 @@
 <h:body>
 	<div id="cabecalho">
 		<div id="logo">
-			<h:graphicImage library="img" name="logo_vendas.png" />
+			<h:graphicImage library="img" name="logo_vendas.png"/>
 		</div>
-		<!-- 
-		<div id="usuarioLogado" >
-			<h:form id="formLoggedin" rendered="#{usuarioLogado.logado}">
-				Usuário: #{usuarioLogado.usuario.login} <h:commandLink
-					value="logout" action="#{loginBean.logout}" />
-			</h:form>
-		</div> -->
 	</div>
+	<h:form>
+			<p:menubar style="width:100%" rendered="true">
+		        <p:submenu label="Produtos">
+		        	<p:menuitem value="Registro de Compra" title="Registro de Compra" />
+		        	<p:menuitem value="Listagem de Compras" title="Listagem de Compras" />
+		        	<p:menuitem value="Listagem de Produtos" title="Listagem de Produtos" />
+		        	<p:menuitem value="Tags e códigos de barra" title="Tags e códigos de barra" />
+		        </p:submenu>
+		        <p:submenu label="Vendas">
+		        	<p:menuitem value="Registro de Venda" title="Registro de Venda" />
+		        	<p:menuitem value="Listagem de Vendas" title="Listagem de Vendas" />
+		        </p:submenu>
+		        <p:submenu label="Fornecedores" >
+		        	<p:menuitem value="Listar" title="Listar" />
+		        	<p:menuitem value="Cadastrar" title="Cadastrar" />
+		        </p:submenu>
+		        <p:submenu label="Clientes" >
+		        	<p:menuitem value="Listar" title="Listar" />
+		        	<p:menuitem value="Cadastrar" title="Cadastrar" />
+		        </p:submenu>
+		        <p:submenu label="Contas e Movimentações" >
+		        </p:submenu>
+		        <p:submenu label="Relatórios" >
+		        	<p:menuitem value="Geral" title="Geral" />
+		        	<p:menuitem value="Anual" title="Anual" />
+		        </p:submenu>
+		        <p:submenu label="Sistema" >
+		        </p:submenu>
+		    </p:menubar>
+	</h:form>
+		    
 	<div id="conteudo">
-		<ui:insert name="corpo" />
+			<ui:insert name="corpo" />
 	</div>
 	<div id="rodape">
 		Copyringht 2014 Todos os direitos reservados a <b>SAMBuild</b>.
