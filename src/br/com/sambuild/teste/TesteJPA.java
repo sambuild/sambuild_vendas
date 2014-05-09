@@ -1,23 +1,22 @@
 package br.com.sambuild.teste;
 
-import javax.persistence.EntityManager;
-
 import br.com.sambuild.modelo.Cliente;
 import br.com.sambuild.util.ApplicationProperties;
-import br.com.sambuild.util.JPAUtil;
+import br.com.sumbuild.dao.ClienteDao;
 
 public class TesteJPA {
 
     public static void main(String[] args) {
-	
+
 	ApplicationProperties.load();
-	
-	EntityManager em = new JPAUtil().getEntityManager();
+	ClienteDao dao = new ClienteDao();
+	Cliente c = new Cliente();
 
-	Cliente cliente = em.find(Cliente.class, 1L);
+	c.setNome("Cebeça");
 
-	System.out.println(cliente.getNome());
+	dao.adiciona(c);
+	c = dao.buscaPorId(1L);
+	System.out.println(c.getNome());
 
-	em.close();
     }
 }
