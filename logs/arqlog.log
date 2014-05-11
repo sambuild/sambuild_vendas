@@ -43,3 +43,59 @@
 2014-05-07 23:19:58.602 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Fornecedor
 2014-05-07 23:19:58.603 [INFO] java.sql.DatabaseMetaData:147 - HHH000262: Table not found: Produto
 2014-05-07 23:20:03.313 [INFO] org.hibernate.tool.hbm2ddl.SchemaUpdate:242 - HHH000232: Schema update complete
+2014-05-08 00:15:32.499 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-08 00:15:32.502 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-08 00:15:32.503 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-08 00:15:32.581 [INFO] org.hibernate.jpa.internal.util.LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: lulu
+	...]
+2014-05-08 00:15:32.657 [INFO] org.hibernate.Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2014-05-08 00:15:32.659 [INFO] org.hibernate.cfg.Environment:239 - HHH000206: hibernate.properties not found
+2014-05-08 00:15:32.660 [INFO] org.hibernate.cfg.Environment:346 - HHH000021: Bytecode provider name : javassist
+2014-05-08 00:15:32.838 [INFO] org.hibernate.annotations.common.Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2014-05-08 00:15:32.867 [WARN] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2014-05-08 00:15:32.874 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/lulu]
+2014-05-08 00:15:32.874 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=root, password=****}
+2014-05-08 00:15:32.874 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2014-05-08 00:15:32.875 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2014-05-08 00:16:13.759 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-08 00:16:13.762 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-08 00:16:13.763 [WARN] org.hibernate.ejb.HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-05-08 00:16:13.840 [INFO] org.hibernate.jpa.internal.util.LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: lulu
+	...]
+2014-05-08 00:16:13.915 [INFO] org.hibernate.Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2014-05-08 00:16:13.917 [INFO] org.hibernate.cfg.Environment:239 - HHH000206: hibernate.properties not found
+2014-05-08 00:16:13.918 [INFO] org.hibernate.cfg.Environment:346 - HHH000021: Bytecode provider name : javassist
+2014-05-08 00:16:14.097 [INFO] org.hibernate.annotations.common.Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2014-05-08 00:16:14.127 [WARN] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2014-05-08 00:16:14.160 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/lulu]
+2014-05-08 00:16:14.160 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=root, password=****}
+2014-05-08 00:16:14.161 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2014-05-08 00:16:14.162 [INFO] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2014-05-08 00:16:14.377 [INFO] org.hibernate.dialect.Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014-05-08 00:16:14.522 [INFO] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2014-05-08 00:16:14.791 [INFO] org.hibernate.tool.hbm2ddl.SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2014-05-08 00:16:14.792 [INFO] org.hibernate.tool.hbm2ddl.SchemaUpdate:193 - HHH000102: Fetching database metadata
+2014-05-08 00:16:14.794 [INFO] org.hibernate.tool.hbm2ddl.SchemaUpdate:205 - HHH000396: Updating schema
+2014-05-08 00:16:14.813 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000261: Table found: lulu.cliente
+2014-05-08 00:16:14.813 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:67 - HHH000037: Columns: [id, nome, nascimento, cpf]
+2014-05-08 00:16:14.814 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000108: Foreign keys: []
+2014-05-08 00:16:14.814 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:70 - HHH000126: Indexes: [primary]
+2014-05-08 00:16:14.826 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000261: Table found: lulu.contato
+2014-05-08 00:16:14.827 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:67 - HHH000037: Columns: [id, cliente_id, email, telefone, descricao]
+2014-05-08 00:16:14.827 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000108: Foreign keys: [fk_9h78awfoy08gk6x471nqxbnkq]
+2014-05-08 00:16:14.827 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:70 - HHH000126: Indexes: [fk_9h78awfoy08gk6x471nqxbnkq, primary]
+2014-05-08 00:16:14.837 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000261: Table found: lulu.fornecedor
+2014-05-08 00:16:14.837 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:67 - HHH000037: Columns: [id, nome, cpf, cnpj]
+2014-05-08 00:16:14.837 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000108: Foreign keys: []
+2014-05-08 00:16:14.837 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:70 - HHH000126: Indexes: [primary]
+2014-05-08 00:16:14.846 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000261: Table found: lulu.produto
+2014-05-08 00:16:14.846 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:67 - HHH000037: Columns: [id, preco, quantidade, nome, descricao]
+2014-05-08 00:16:14.846 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000108: Foreign keys: []
+2014-05-08 00:16:14.847 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:70 - HHH000126: Indexes: [primary]
+2014-05-08 00:16:14.855 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000261: Table found: lulu.usuario
+2014-05-08 00:16:14.855 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:67 - HHH000037: Columns: [id, login, senha]
+2014-05-08 00:16:14.855 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000108: Foreign keys: []
+2014-05-08 00:16:14.855 [INFO] org.hibernate.tool.hbm2ddl.TableMetadata:70 - HHH000126: Indexes: [primary]
+2014-05-08 00:16:14.856 [INFO] org.hibernate.tool.hbm2ddl.SchemaUpdate:242 - HHH000232: Schema update complete
