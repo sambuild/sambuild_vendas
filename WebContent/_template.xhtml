@@ -9,11 +9,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><ui:insert name="title">SAMBuild Vendas</ui:insert></title>
 	<h:outputStylesheet library="css" name="style.css" />
+	<link rel="icon" href="#{resource['images/icon_vendas.png']}" type="image.png" />
 </h:head>
 <h:body>
 	<div id="cabecalho">
 		<div id="logo">
-			<h:graphicImage library="img" name="logo_vendas.png"/>
+			<h:graphicImage library="images" name="logo_vendasp.png"/>
 		</div>
 	</div>
 	<h:form>
@@ -34,17 +35,78 @@
 		        </p:submenu>
 		        <p:submenu label="Clientes" >
 		        	<p:menuitem value="Listar" title="Listar" />
-		        	<p:menuitem value="Cadastrar" title="Cadastrar" />
+		        	<p:menuitem value="Cadastrar" title="Cadastrar" action="cliente"/>
 		        </p:submenu>
 		        <p:submenu label="Contas e Movimentações" >
+		        	<p:menuitem value="Registrar pagamento fiado" title="Registrar pagamento fiado" />
+		        	<p:menuitem value="Registrar devolução pagamento" title="Registrar devolução pagamento" />
+		        	<p:menuitem value="Histórico de movimentações" title="Histórico de movimentações" />
+		        	<p:menuitem value="Controle de cheques" title="Controle de cheques" />
 		        </p:submenu>
 		        <p:submenu label="Relatórios" >
 		        	<p:menuitem value="Geral" title="Geral" />
 		        	<p:menuitem value="Anual" title="Anual" />
 		        </p:submenu>
 		        <p:submenu label="Sistema" >
+		        	<p:menuitem value="Listar Usuário" title="Listar Usuário" />
+		        	<p:menuitem value="Cadastrar Usuário" title="Cadastrar Usuário" />
+		        	<p:menuitem value="Auditoria" title="Auditoria" />
+		        	<p:menuitem value="Formas de pagamento" title="Formas de pagamento" />
+		        	<p:menuitem value="Classes de produto" title="Classes de produto" />
+		        	<p:menuitem value="Configurações globais" title="Configurações globais" />
+		        	<p:menuitem value="Preferências" title="Preferências" />
+		        	<p:menuitem value="Dicas de uso" title="Dicas de uso" />
 		        </p:submenu>
 		    </p:menubar>
+		    
+		    
+		    <!-- 
+   		<p:dashboard id="board" model="#{indexBean.model}">
+	        <p:panel id="produtos" header="Produtos">
+	        	<p:accordionPanel>
+				    <p:tab title="Compra">
+				        <h:panelGrid columns="2" cellpadding="10">
+					        <h:commandLink action="compra">  
+							    <h:graphicImage  
+							    library="images" name="reg_compra.png" />  
+							</h:commandLink>
+				        </h:panelGrid>
+				    </p:tab>
+				    <p:tab title="asdasdas">
+				        <h:panelGrid columns="2" cellpadding="10">
+				            <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
+				            In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, 
+				            killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows." />
+				        </h:panelGrid>
+				    </p:tab>
+				</p:accordionPanel>
+	        </p:panel>
+	 
+	        <p:panel id="vendas" header="Vendas">
+	        </p:panel>
+	 
+	        <p:panel id="fornecedores" header="Fornecedores">
+	        </p:panel>
+	 
+	        <p:panel id="clientes" header="Clientes">
+			        <h:panelGrid columns="2" cellpadding="10">
+				        <h:commandLink action="cliente">  
+						    <h:graphicImage library="images" name="cad_cliente.png" />  
+						</h:commandLink>
+			        </h:panelGrid>
+	        </p:panel>
+	 
+	        <p:panel id="contasMovimentacoes" header="Contas e Movimentações">
+	        </p:panel>
+	 
+	        <p:panel id="relatorios" header="Relatórios">
+	        </p:panel>
+	 
+	        <p:panel id="sistema" header="Sistema">
+	        </p:panel>
+	    </p:dashboard>
+		     -->
+		    
 	</h:form>
 		    
 	<div id="conteudo">

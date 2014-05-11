@@ -19,8 +19,58 @@ public class Contato {
 
 	private String email;
 	
+	private String endereco;
+
+	private String bairro;
+
+	private Boolean principal;
+	
+	private String cidade;
+	
+	private String uf;
+	
 	@ManyToOne
 	private Cliente cliente;
+	
+	public Boolean getPrincipal() {
+		return principal;
+	}
+
+	public void setPrincipal(Boolean principal) {
+		this.principal = principal;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getUf() {
+		return uf;
+	}
+
+	public void setUf(String uf) {
+		this.uf = uf;
+	}
 
 	public Long getId() {
 		return id;

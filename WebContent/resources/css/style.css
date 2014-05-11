@@ -5,8 +5,8 @@
 }
 
 body {
-	background-image: url("#{resource['img/background.png']}"); 
-	font-size: 12px;
+	background-image: url("#{resource['images/wallpaper_azul2.jpg']}"); 
+	font-size: 16px;
 	font-family: helvetica, arial, sans-serif;
 	padding-bottom: 30px;
 	text-align: center;
@@ -14,7 +14,7 @@ body {
 
 /** cabecalho **/
 #cabecalho {
-	background-image: url("#{resource['img/background_cabecalho.png']}");
+	background-image: url("#{resource['images/background_cabecalho.fw.png']}");
 	background-repeat: repeat-x;
 	height: 60px;
 	position: relative;
@@ -25,7 +25,7 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 50%;
-	margin-left: -400px;
+	margin-left: -100px;
 }
 
 #usuarioLogado {
@@ -63,6 +63,20 @@ body {
 	position: relative;
 	padding: 10px 0px;
 	margin: 0 auto;
+	
+	opacity: 0.90;
+	
+	border-radius: 16px;
+	-moz-border-radius: 16px;
+	
+	border-style:solid;
+	border-width:2px;
+	border-color:#2A5FAA;
+ 
+	visibility:visible;
+	
+	background-color:#FFFFFF;
+	z-index:1;
 }
 
 /** rodape **/
@@ -75,9 +89,11 @@ body {
 	font-size: 10px;
 	color: #FFF;
 	display: block;
-	background-image: -webkit-linear-gradient(270deg,rgba(35,204,28,1.00) 0%,rgba(64,251,50,1.00) 100%);
-	background-image: linear-gradient(180deg,rgba(35,204,28,1.00) 0%,rgba(64,251,50,1.00) 100%);
+	background-image: -webkit-linear-gradient(270deg,rgba(0,159,167,1.00) 0%,rgba(3,132,143,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(0,159,167,1.00) 0%,rgba(3,132,143,1.00) 100%);
+	
 }
+
 
 /* TITULO */
 h2 {
@@ -143,7 +159,7 @@ input[type=submit],button {
 }
 
 input[type=submit] {
-	background: url("../resources/img/fundo_botao.gif") repeat-x scroll
+	background: url("../resources/images/fundo_botao.gif") repeat-x scroll
 		0 0 #2A2A2A;
 	border: 1px solid #272727;
 	color: #FFFFFF;

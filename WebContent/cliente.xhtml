@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/_template.xhtml">
+	<ui:define name="title">SAMBuild vendas - Clientes</ui:define>
+	<ui:define name="corpo">
+		<h:form id="formCliente">
+			<h2>
+				<h:outputLabel value="Novo Cliente"
+					rendered="#{empty String.valueof(clienteBean.cliente.id)}"></h:outputLabel>
+				<h:outputLabel value="Alterar Cliente"
+					rendered="#{not empty String.valueof(clienteBean.cliente.id)}"></h:outputLabel>
+			</h2>
+			<fieldset>
+				<legend>Dados do Cliente</legend>
+				<h:inputHidden value="#{clienteBean.cliente.id}" />
+				
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Nome" for="nome" />
+					<p:inputText id="nome" value="#{clienteBean.cliente.nome}" />
+	
+					<h:outputLabel value="Data de nascimento" for="dtNascimento" />
+					<p:calendar value="#{clienteBean.cliente.nascimento.time}" />
+	
+					<h:outputLabel value="CPF" for="cpf" />
+					<p:inputText id="preco" value="#{clienteBean.cliente.cpf}" />
+	
+					<h:commandButton value="Gravar" action="#{clienteBean.gravar()}">
+						<f:ajax render="@form :formContato" execute="@form"></f:ajax>
+					</h:commandButton>
+					<h:commandButton value="Cancelar" action="#{clienteBean.cancelar()}">
+						<f:ajax render="@form" />
+					</h:commandButton>
+				</h:panelGrid>
+			</fieldset>
+		</h:form>
+
+		<h:form id="formContato">
+			<fieldset>
+				<legend>Dados de contato</legend>
+
+				<h:panelGrid columns="4">
+					<h:outputLabel>Nome</h:outputLabel>
+					<h:inputText id="nome" value="#{clienteBean.cliente.contatoPrincipal.descricao}" />
+	
+					<h:outputLabel>E-mail</h:outputLabel>
+					<h:inputText id="email" value="#{clienteBean.cliente.contatoPrincipal.email}" />
+	
+					<h:outputLabel>Telefone</h:outputLabel>
+					<h:inputText id="telefone" value="#{clienteBean.cliente.contatoPrincipal.telefone}" />
+	
+					<h:outputLabel>Endereço</h:outputLabel>
+					<h:inputText id="endereco" value="#{clienteBean.cliente.contatoPrincipal.endereco}" />
+	
+					<h:outputLabel>Bairro</h:outputLabel>
+					<h:inputText id="bairro" value="#{clienteBean.cliente.contatoPrincipal.bairro}" />
+	
+					<h:outputLabel>Cidade</h:outputLabel>
+					<h:inputText id="cidade" value="#{clienteBean.cliente.contatoPrincipal.cidade}" />
+	
+					<h:outputLabel>UF</h:outputLabel>
+					<h:inputText id="uf" value="#{clienteBean.cliente.contatoPrincipal.uf}" />
+	
+					<h:outputLabel>Principal</h:outputLabel>
+					<p:selectBooleanCheckbox id="principal" value="#{clienteBean.cliente.contatoPrincipal.principal}" />
+				</h:panelGrid>
+
+				<h:commandButton value="Adicionar" action="#{clienteBean.adicionarContato()}">
+					<f:ajax render="@form" execute="@form"></f:ajax>
+				</h:commandButton>
+				
+				<h:dataTable value="#{clienteBean.cliente.contatos}" var="contato"
+					styleClass="dados" rowClasses="impar,par">
+					
+					<h:column>
+						<f:facet name="header">Nome</f:facet>
+						#{contato.descricao}
+					</h:column>
+					<h:column>
+						<f:facet name="header">E-mail</f:facet>
+						#{contato.email}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Telefone</f:facet>
+						#{contato.telefone}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Endereço</f:facet>
+						#{contato.endereco}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Bairro</f:facet>
+						#{contato.bairro}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Cidade</f:facet>
+						#{contato.cidade}
+					</h:column>
+					<h:column>
+						<f:facet name="header">UF</f:facet>
+						#{contato.uf}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Principal</f:facet>
+						#{contato.principal}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Ações</f:facet>
+						<h:panelGrid columns="2">
+							<h:commandLink value="Alterar">
+								<f:setPropertyActionListener target="#{clienteBean.cliente}"
+									value="#{cliente}" />
+								<f:ajax render=":formCliente :formContato"></f:ajax>
+							</h:commandLink>
+							<h:commandLink action="#{clienteBean.remover(cliente)}"
+								value="Remover">
+								<f:ajax render="@form"></f:ajax>
+							</h:commandLink>
+						</h:panelGrid>
+					</h:column>
+				</h:dataTable>
+			</fieldset>
+		</h:form>
+
+		<h2>Listagem de Clientes</h2>
+		<h:form id="formListCliente">
+			<h:dataTable value="#{clienteBean.clientes}" var="cliente"
+				styleClass="dados" rowClasses="impar,par">
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					#{cliente.nome}
+				</h:column>
+				<h:column>
+					<f:facet name="header">CPF</f:facet>
+					#{cliente.cpf}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Ações</f:facet>
+					<h:panelGrid columns="2">
+						<h:commandLink value="Alterar">
+							<f:setPropertyActionListener target="#{clienteBean.cliente}"
+								value="#{cliente}" />
+							<f:ajax render=":formCliente :formContato"></f:ajax>
+						</h:commandLink>
+						<h:commandLink action="#{clienteBean.remover(cliente)}"
+							value="Remover">
+							<f:ajax render="@form"></f:ajax>
+						</h:commandLink>
+					</h:panelGrid>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
