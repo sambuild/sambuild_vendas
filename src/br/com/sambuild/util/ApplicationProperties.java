@@ -10,6 +10,7 @@ import org.apache.log4j.PropertyConfigurator;
 
 public class ApplicationProperties {
 
+    @SuppressWarnings("unused")
     private static final Logger LOG = Logger.getLogger(ApplicationProperties.class);
 
     private static final String CONFIG_LOG4J = "resources/log4j.properties";
