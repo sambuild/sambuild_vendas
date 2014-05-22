@@ -32,19 +32,15 @@ public class Cliente {
 	@OneToMany(mappedBy="cliente")
 	private List<Contato> contatos;
 	
-	private Contato contatoPrincipal;
-	
 	public Cliente(){
 		contatos = new ArrayList<Contato>();
-		contatoPrincipal = new Contato();
 	}
 	
 	public Contato getContatoPrincipal() {
-		return contatoPrincipal;
-	}
-
-	public void setContatoPrincipal(Contato contatoPrincipal) {
-		this.contatoPrincipal = contatoPrincipal;
+		for(Contato contatoPrincipal : contatos)
+			if(contatoPrincipal.getPrincipal())
+				return contatoPrincipal;
+		return null;
 	}
 
 	public boolean isSpc() {
@@ -76,11 +72,6 @@ public class Cliente {
 	}
 
 	public void setContatos(List<Contato> contatos) {
-		for (Contato contato : contatos){
-			if(contato.getPrincipal())
-				contatoPrincipal=contato;
-		}
-		
 		this.contatos = contatos;
 	}
 
