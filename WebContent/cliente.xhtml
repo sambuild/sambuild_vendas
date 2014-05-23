@@ -45,28 +45,28 @@
 
 				<h:panelGrid columns="4">
 					<h:outputLabel>Nome</h:outputLabel>
-					<h:inputText id="nome" value="#{clienteBean.cliente.contatoPrincipal.descricao}" />
+					<h:inputText id="nome" value="#{clienteBean.contato.descricao}" />
 	
 					<h:outputLabel>E-mail</h:outputLabel>
-					<h:inputText id="email" value="#{clienteBean.cliente.contatoPrincipal.email}" />
+					<h:inputText id="email" value="#{clienteBean.contato.email}" />
 	
 					<h:outputLabel>Telefone</h:outputLabel>
-					<h:inputText id="telefone" value="#{clienteBean.cliente.contatoPrincipal.telefone}" />
+					<h:inputText id="telefone" value="#{clienteBean.contato.telefone}" />
 	
 					<h:outputLabel>Endereço</h:outputLabel>
-					<h:inputText id="endereco" value="#{clienteBean.cliente.contatoPrincipal.endereco}" />
+					<h:inputText id="endereco" value="#{clienteBean.contato.endereco}" />
 	
 					<h:outputLabel>Bairro</h:outputLabel>
-					<h:inputText id="bairro" value="#{clienteBean.cliente.contatoPrincipal.bairro}" />
+					<h:inputText id="bairro" value="#{clienteBean.contato.bairro}" />
 	
 					<h:outputLabel>Cidade</h:outputLabel>
-					<h:inputText id="cidade" value="#{clienteBean.cliente.contatoPrincipal.cidade}" />
+					<h:inputText id="cidade" value="#{clienteBean.contato.cidade}" />
 	
 					<h:outputLabel>UF</h:outputLabel>
-					<h:inputText id="uf" value="#{clienteBean.cliente.contatoPrincipal.uf}" />
+					<h:inputText id="uf" value="#{clienteBean.contato.uf}" />
 	
 					<h:outputLabel>Principal</h:outputLabel>
-					<p:selectBooleanCheckbox id="principal" value="#{clienteBean.cliente.contatoPrincipal.principal}" />
+					<p:selectBooleanCheckbox id="principal" value="#{clienteBean.contato.principal}" />
 				</h:panelGrid>
 
 				<h:commandButton value="Adicionar" action="#{clienteBean.adicionarContato()}">
@@ -106,7 +106,7 @@
 					</h:column>
 					<h:column>
 						<f:facet name="header">Principal</f:facet>
-						#{contato.principal}
+						<p:selectBooleanCheckbox  value="#{contato.principal}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Ações</f:facet>
