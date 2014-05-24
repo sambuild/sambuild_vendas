@@ -1,10 +1,10 @@
 package br.com.sambuild.bean;
 
-import java .io.Serializable;
+import java.io.Serializable;
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.annotation.ManagedBean;
+import javax.faces.view.ViewScoped;
 
 import br.com.sambuild.modelo.Cliente;
 import br.com.sambuild.modelo.Contato;

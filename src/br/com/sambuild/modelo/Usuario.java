@@ -3,15 +3,11 @@ package br.com.sambuild.modelo;
 import java.util.Calendar;
 
 import javax.persistence.Entity;
-import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Query;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import br.com.sambuild.util.JPAUtil;
 
 @Entity
 public class Usuario {
@@ -89,18 +85,5 @@ public class Usuario {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
-    }
-
-    public boolean existe() {
-		EntityManager em = JPAUtil.getEntityManager();
-
-		Query query = em.createQuery(
-				"select u from Usuario u where u.email = :pEmail and u.senha = :pSenha")
-			.setParameter("pEmail", getEmail())
-			.setParameter("pSenha", getSenha());
-
-		boolean encontrado = !query.getResultList().isEmpty();
-
-		return encontrado;
     }
 }

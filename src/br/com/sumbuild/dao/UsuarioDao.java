@@ -2,21 +2,22 @@ package br.com.sumbuild.dao;
 
 import java.io.Serializable;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.com.sambuild.modelo.Usuario;
-import br.com.sambuild.util.JPAUtil;
 
 public class UsuarioDao extends Dao<Usuario> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Inject
+    private EntityManager manager;
+    
     public UsuarioDao() {
 	super(Usuario.class);
     }
-
-    private EntityManager manager = JPAUtil.getEntityManager();
 
     public boolean existe(Usuario usuario) {
 
