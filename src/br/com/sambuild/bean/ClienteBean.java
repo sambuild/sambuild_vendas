@@ -1,13 +1,24 @@
 package br.com.sambuild.bean;
 
 import java .io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import org.hibernate.service.spi.InjectService;
+
+import br.com.sambuild.modelo.Bairro;
+import br.com.sambuild.modelo.Cidade;
 import br.com.sambuild.modelo.Cliente;
 import br.com.sambuild.modelo.Contato;
+import br.com.sambuild.modelo.UF;
+import br.com.sumbuild.dao.BairroDao;
+import br.com.sumbuild.dao.CidadeDao;
+import br.com.sumbuild.dao.UFDao;
 
 @ManagedBean
 @ViewScoped
@@ -20,6 +31,12 @@ public class ClienteBean implements Serializable {
     private Contato contato = new Contato();
     
     private List<Cliente> clientes;
+    
+    private List<UF> ufs = new UFDao().listaTodos();
+
+    private List<Cidade> cidades = new ArrayList<Cidade>();
+
+    private List<Bairro> bairros = new BairroDao().listaTodos();
 
     public List<Cliente> getClientes() {
 		return clientes;
@@ -66,5 +83,39 @@ public class ClienteBean implements Serializable {
 	
 	private void novoContato(){
 		this.contato = new Contato();
+	}
+	
+	public Map<String,String> getUfs(){
+		Map<String,String> valores = new HashMap<String, String>();
+
+		for(UF uf : ufs){
+			valores.put(uf.getDescricao(), uf.getDescricao());
+		}
+
+		return valores;
+	}
+	
+	public Map<String,String> getCidades(){
+		Map<String,String> valores = new HashMap<String, String>();
+
+		for(Cidade cidade : cidades){
+			valores.put(cidade.getDescricao(), cidade.getDescricao());
+		}
+
+		return valores;
+	}
+	
+	public Map<String,String> getBairros(){
+		Map<String,String> valores = new HashMap<String, String>();
+
+		for(Bairro bairro : bairros){
+			valores.put(bairro.getDescricao(), bairro.getDescricao());
+		}
+
+		return valores;
+	}
+	
+	public void carregaCidades(){
+		new CidadeDao().listaTodos();
 	}
 }
