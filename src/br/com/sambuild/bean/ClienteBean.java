@@ -9,14 +9,14 @@ import java.util.Map;
 import javax.annotation.ManagedBean;
 import javax.faces.view.ViewScoped;
 
+import br.com.sambuild.dao.BairroDao;
+import br.com.sambuild.dao.CidadeDao;
+import br.com.sambuild.dao.UFDao;
 import br.com.sambuild.modelo.Bairro;
 import br.com.sambuild.modelo.Cidade;
 import br.com.sambuild.modelo.Cliente;
 import br.com.sambuild.modelo.Contato;
 import br.com.sambuild.modelo.UF;
-import br.com.sumbuild.dao.BairroDao;
-import br.com.sumbuild.dao.CidadeDao;
-import br.com.sumbuild.dao.UFDao;
 
 @ManagedBean
 @ViewScoped

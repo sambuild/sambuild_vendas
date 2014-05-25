@@ -1,7 +1,7 @@
 package br.com.sambuild.teste;
 
+import br.com.sambuild.dao.UsuarioDao;
 import br.com.sambuild.modelo.Usuario;
-import br.com.sumbuild.dao.UsuarioDao;
 
 public class TesteJPA {
 

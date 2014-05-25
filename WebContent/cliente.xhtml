@@ -24,7 +24,7 @@
 					<p:inputText id="nome" value="#{clienteBean.cliente.nome}" />
 	
 					<h:outputLabel value="Data de nascimento" for="dtNascimento" />
-					<p:calendar value="#{clienteBean.cliente.nascimento.time}" />
+					<p:calendar value="#{clienteBean.cliente.nascimento.time}" navigator="true" pattern="dd-MM-yyyy" mask="true"/>
 	
 					<h:outputLabel value="CPF" for="cpf" />
 					<p:inputText id="preco" value="#{clienteBean.cliente.cpf}" />
@@ -45,25 +45,34 @@
 
 				<h:panelGrid columns="4">
 					<h:outputLabel>Nome</h:outputLabel>
-					<h:inputText id="nome" value="#{clienteBean.contato.descricao}" />
+					<p:inputText id="nome" value="#{clienteBean.contato.descricao}" />
 	
 					<h:outputLabel>E-mail</h:outputLabel>
-					<h:inputText id="email" value="#{clienteBean.contato.email}" />
+					<p:inputText id="email" value="#{clienteBean.contato.email}" />
 	
 					<h:outputLabel>Telefone</h:outputLabel>
-					<h:inputText id="telefone" value="#{clienteBean.contato.telefone}" />
+					<p:inputMask id="telefone" value="#{clienteBean.contato.telefone}" mask="(99) 9999-9999"  />
 	
 					<h:outputLabel>Endereço</h:outputLabel>
-					<h:inputText id="endereco" value="#{clienteBean.contato.endereco}" />
-	
-					<h:outputLabel>Bairro</h:outputLabel>
-					<h:inputText id="bairro" value="#{clienteBean.contato.bairro}" />
-	
-					<h:outputLabel>Cidade</h:outputLabel>
-					<h:inputText id="cidade" value="#{clienteBean.contato.cidade}" />
+					<p:inputText id="endereco" value="#{clienteBean.contato.endereco}" />
 	
 					<h:outputLabel>UF</h:outputLabel>
-					<h:inputText id="uf" value="#{clienteBean.contato.uf}" />
+					<p:selectOneMenu id="uf" value="#{clienteBean.contato.uf}" effect="fold" editable="true" onchange="#{clienteBean.carregaCidades()}" >
+			            <f:selectItem itemValue="" itemLabel="Selecione o estado..." />
+			            <f:selectItems value="#{clienteBean.ufs}" />
+			        </p:selectOneMenu>
+	
+					<h:outputLabel>Cidade</h:outputLabel>
+					<p:selectOneMenu id="cidade" value="#{clienteBean.contato.cidade}" effect="fold" editable="true">
+			            <f:selectItem itemValue="" itemLabel="Selecione a cidade..." />
+			            <f:selectItems value="#{clienteBean.cidades}" />
+			        </p:selectOneMenu>
+	 
+					<h:outputLabel>Bairro</h:outputLabel>
+					<p:selectOneMenu id="bairro" value="#{clienteBean.contato.bairro}" effect="fold" editable="true">
+			            <f:selectItem itemValue="" itemLabel="Selecione o bairro..." />
+			            <f:selectItems value="#{clienteBean.bairros}" />
+			        </p:selectOneMenu>
 	
 					<h:outputLabel>Principal</h:outputLabel>
 					<p:selectBooleanCheckbox id="principal" value="#{clienteBean.contato.principal}" />

@@ -2,14 +2,14 @@ package br.com.sambuild.bean;
 
 import java.io.Serializable;
 
-import javax.annotation.ManagedBean;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
+import br.com.sambuild.dao.UsuarioDao;
 import br.com.sambuild.modelo.Usuario;
-import br.com.sumbuild.dao.UsuarioDao;
 
-@ManagedBean
+@Named
 @RequestScoped
 public class LoginBean implements Serializable {
 

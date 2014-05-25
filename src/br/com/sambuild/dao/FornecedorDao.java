@@ -1,4 +1,4 @@
-package br.com.sumbuild.dao;
+package br.com.sambuild.dao;
 
 import br.com.sambuild.modelo.Fornecedor;
 
