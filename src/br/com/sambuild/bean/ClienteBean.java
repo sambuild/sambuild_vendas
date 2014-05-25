@@ -6,10 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
-
-import org.hibernate.service.spi.InjectService;
+import javax.annotation.ManagedBean;
+import javax.faces.view.ViewScoped;
 
 import br.com.sambuild.modelo.Bairro;
 import br.com.sambuild.modelo.Cidade;
@@ -32,11 +30,11 @@ public class ClienteBean implements Serializable {
     
     private List<Cliente> clientes;
     
-    private List<UF> ufs = new UFDao().listaTodos();
+    private List<UF> ufs = new UFDao().listAll();
 
     private List<Cidade> cidades = new ArrayList<Cidade>();
 
-    private List<Bairro> bairros = new BairroDao().listaTodos();
+    private List<Bairro> bairros = new BairroDao().listAll();
 
     public List<Cliente> getClientes() {
 		return clientes;
@@ -116,6 +114,6 @@ public class ClienteBean implements Serializable {
 	}
 	
 	public void carregaCidades(){
-		new CidadeDao().listaTodos();
+		new CidadeDao().listAll();
 	}
 }

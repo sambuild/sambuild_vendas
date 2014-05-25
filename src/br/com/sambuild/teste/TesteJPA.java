@@ -13,6 +13,6 @@ public class TesteJPA {
     	usuario.setSenha("skilo");
     	
     	UsuarioDao dao = new UsuarioDao();
-    	dao.adiciona(usuario);
+    	dao.saveNew(usuario);
     }
 }

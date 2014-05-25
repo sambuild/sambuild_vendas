@@ -2,40 +2,72 @@ package br.com.sumbuild.dao;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
 
-import br.com.sambuild.util.JPAUtil;
+import br.com.sambuild.interceptor.Transactional;
 
 public class Dao<T> {
 
     private final Class<T> classe;
 
-    private EntityManager manager = JPAUtil.getEntityManager();
+    @Inject
+    private EntityManager manager;
 
     public Dao(Class<T> classe) {
 	this.classe = classe;
     }
 
-    public void adiciona(T t) {
-	manager.getTransaction().begin();
-	manager.persist(t);
-	manager.getTransaction().commit();
+    /**
+     * <p>
+     * This method is responsible for save a new object in database.
+     * </p>
+     * <p>
+     * For use this method is necessary first open the transition, for this use
+     * the annotation {@link Transactional}
+     * </p>
+     * 
+     * @param instance
+     *            Object for persist in database
+     */
+    public void saveNew(T instance) {
+	manager.persist(instance);
     }
 
-    public void remove(T t) {
-	manager.getTransaction().begin();
-	manager.remove(manager.merge(t));
-	manager.getTransaction().commit();
+    /**
+     * <p>
+     * This method is responsible for remove a object in database.
+     * </p>
+     * <p>
+     * For use this method is necessary first open the transition, for this use
+     * the annotation {@link Transactional}
+     * </p>
+     * 
+     * @param instance
+     *            Object for be removed of database
+     */
+    public void remove(T instance) {
+	manager.remove(manager.merge(instance));
     }
 
-    public void atualiza(T t) {
-	manager.getTransaction().begin();
-	manager.merge(t);
-	manager.getTransaction().commit();
+    /**
+     * <p>
+     * This method is responsible for amend a object in database.
+     * </p>
+     * <p>
+     * For use this method is necessary first open the transition, for this use
+     * the annotation {@link Transactional}
+     * </p>
+     * 
+     * @param instace
+     *            Object for be amended on database
+     */
+    public void amend(T instace) {
+	manager.merge(instace);
     }
 
-    public List<T> listaTodos() {
+    public List<T> listAll() {
 	CriteriaQuery<T> query = manager.getCriteriaBuilder().createQuery(
 		classe);
 	query.select(query.from(classe));
@@ -45,12 +77,12 @@ public class Dao<T> {
 	return lista;
     }
 
-    public T buscaPorId(Long id) {
+    public T findById(Long id) {
 	T instancia = manager.find(classe, id);
 	return instancia;
     }
 
-    public int contaTodos() {
+    public int countAll() {
 	long result = (Long) manager.createQuery(
 		"select count(n) from " + classe.getName() + " n")
 		.getSingleResult();
@@ -58,7 +90,7 @@ public class Dao<T> {
 	return (int) result;
     }
 
-    public List<T> listaTodosPaginada(int firstResult, int maxResults) {
+    public List<T> listByPage(int firstResult, int maxResults) {
 	CriteriaQuery<T> query = manager.getCriteriaBuilder().createQuery(
 		classe);
 	query.select(query.from(classe));

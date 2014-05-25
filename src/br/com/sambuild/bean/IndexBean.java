@@ -2,8 +2,8 @@ package br.com.sambuild.bean;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.annotation.ManagedBean;
+import javax.enterprise.context.RequestScoped;
 
 import org.primefaces.model.DashboardColumn;
 import org.primefaces.model.DashboardModel;
