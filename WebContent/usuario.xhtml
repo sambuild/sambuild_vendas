@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/_template.xhtml">
+	<ui:define name="title">SAMBuild vendas - Usuario</ui:define>
+	<ui:define name="corpo">
+		<h:form id="formUsuario">
+			<h2>
+				<h:outputLabel value="Novo Usuário"
+					rendered="#{empty String.valueof(usuarioBean.usuario.id)}"></h:outputLabel>
+				<h:outputLabel value="Alterar Usuário"
+					rendered="#{not empty String.valueof(usuarioBean.usuario.id)}"></h:outputLabel>
+			</h2>
+			<fieldset>
+				<legend>Dados do Usuário</legend>
+				<h:inputHidden value="#{usuarioBean.usuario.id}" />
+				
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Nome" for="nome" />
+					<p:inputText id="nome" value="#{usuarioBean.usuario.nomeCompleto}" />
+					
+					<h:outputLabel value="E-mail" for="email" />
+					<p:inputText id="email" value="#{usuarioBean.usuario.email}" />
+					
+					<h:outputLabel value="Ativo" for="ativo" />
+					<p:selectBooleanButton value="#{usuarioBean.usuario.ativo}" onLabel="Sim" offLabel="Não" onIcon="ui-icon-check" offIcon="ui-icon-close" />  
+
+					
+					<h:outputLabel value="Senha" for="senha" />
+					<p:password value="#{usuarioBean.usuario.senha}" id="senha"/>
+	
+					<h:commandButton value="Gravar" action="#{usuarioBean.gravar}">
+						<f:ajax render="@form :formListUsuario" execute="@form"></f:ajax>
+					</h:commandButton>
+					<h:commandButton value="Cancelar" action="#{usuarioBean.cancelar()}">
+						<f:ajax render="@form" />
+					</h:commandButton>
+				</h:panelGrid>
+			</fieldset>
+		</h:form>
+		
+		<h2>Listagem de Usuario</h2>
+		<h:form id="formListUsuario">
+			<h:dataTable value="#{usuarioBean.usuarios}" var="usuario"
+				styleClass="dados" rowClasses="impar,par">
+				<h:column>
+					<f:facet name="header">Registro</f:facet>
+					<h:outputLabel value="#{usuario.dataRegistro.time}" >
+						<f:convertDateTime pattern="dd/MM/yyyy HH:MM:SS" />
+					</h:outputLabel>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					#{usuario.nomeCompleto}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Ativo</f:facet>
+					<h:outputLabel rendered="#{usuario.ativo}" value="Sim"/>
+					<h:outputLabel rendered="#{not usuario.ativo}" value="Não"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Ultimo Acesso</f:facet>
+					#{usuario.ultimoAcesso}
+				</h:column>
+				<h:column>
+					<f:facet name="header">E-mail</f:facet>
+					#{usuario.email}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Ações</f:facet>
+					<h:panelGrid columns="2">
+						<h:commandLink value="Alterar">
+							<f:setPropertyActionListener target="#{usuarioBean.usuario}"
+								value="#{usuario}" />
+							<f:ajax render=":formUsuario"></f:ajax>
+						</h:commandLink>
+						<h:commandLink action="#{usuarioBean.remover(usuario)}"
+							value="Remover">
+							<f:ajax render="@form"></f:ajax>
+						</h:commandLink>
+					</h:panelGrid>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
