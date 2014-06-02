@@ -1,14 +1,20 @@
 package br.com.sambuild.dao;
 
+import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import br.com.sambuild.interceptor.Transactional;
 
-public class Dao<T> {
+public class Dao<T> implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final Class<T> classe;
 
@@ -64,7 +70,7 @@ public class Dao<T> {
      *            Object for be amended on database
      */
     public void amend(T instace) {
-	manager.merge(instace);
+	instace = manager.merge(instace);
     }
 
     public List<T> listAll() {
@@ -97,6 +103,25 @@ public class Dao<T> {
 
 	List<T> lista = manager.createQuery(query).setFirstResult(firstResult)
 		.setMaxResults(maxResults).getResultList();
+	return lista;
+    }
+
+    public List<T> listUsingFilter(Map<String, Object> filters,
+	    int firstResult, int maxResults) {
+	CriteriaBuilder criteriaBuilder = manager.getCriteriaBuilder();
+
+	CriteriaQuery<T> query = criteriaBuilder.createQuery(classe);
+
+	Root<T> pet = query.from(classe);
+	for (String key : filters.keySet()) {
+
+	    String value = String.format("%%%s%%", filters.get(key));
+	    query.where(criteriaBuilder.like(pet.<String> get(key), value));
+	}
+	
+	List<T> lista = manager.createQuery(query).setFirstResult(firstResult)
+		.setMaxResults(maxResults).getResultList();
+
 	return lista;
     }
 

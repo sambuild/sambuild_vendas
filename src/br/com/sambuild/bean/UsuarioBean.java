@@ -47,11 +47,11 @@ public class UsuarioBean implements Serializable {
 
     @Transactional
     public void gravar() {
+	usuario.setDataRegistro(Calendar.getInstance());
 	if (usuario.getId() != null && usuario.getId() > 0) {
 	    userDao.amend(usuario);
 	} else {
 	    usuario.setId(null);
-	    usuario.setDataRegistro(Calendar.getInstance());
 	    userDao.saveNew(usuario);
 	}
 	usuario = new Usuario();

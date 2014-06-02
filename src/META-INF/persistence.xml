@@ -12,6 +12,8 @@
 		<class>br.com.sambuild.modelo.Produto</class>
 		<class>br.com.sambuild.modelo.Cliente</class>
 		<class>br.com.sambuild.modelo.Contato</class>
+		<class>br.com.sambuild.modelo.FornecedorEndereco</class>
+		<class>br.com.sambuild.modelo.FornecedorContato</class>
 
 		<properties>
 			<!-- O hibernate vai gerar sql específico para MySQL -->
