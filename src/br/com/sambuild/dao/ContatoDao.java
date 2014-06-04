@@ -11,7 +11,12 @@ import br.com.sambuild.modelo.Fornecedor;
 
 public class ContatoDao extends Dao<Contato> {
 
-    @Inject
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3866963601958824195L;
+
+	@Inject
     private EntityManager manager;
 
     public ContatoDao() {
