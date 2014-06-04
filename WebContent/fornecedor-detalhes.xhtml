@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/_template.xhtml">
+	<ui:define name="title">SAMBuild vendas - Fornecedor</ui:define>
+	<ui:define name="corpo">
+		<p:tabView>
+			<p:tab title="#1 - Dados Fornecedor">
+
+				<h:form id="formFornecedor">
+					<h2>
+						<h:outputLabel value="Novo Fornecedor"
+							rendered="#{empty String.valueof(fornecedorBean.fornecedor.id)}"></h:outputLabel>
+						<h:outputLabel value="Alterar Fornecedor"
+							rendered="#{not empty String.valueof(fornecedorBean.fornecedor.id)}"></h:outputLabel>
+					</h2>
+					<fieldset>
+						<legend>Dados do Fornecedor</legend>
+						<h:inputHidden value="#{fornecedorBean.fornecedor.id}" />
+
+						<h:panelGrid columns="2">
+							<h:outputLabel value="Nome" for="nome" />
+							<p:inputText id="nome" value="#{fornecedorBean.fornecedor.nome}" />
+
+							<h:outputLabel value="Inscrição Estadual" for="inscEst" />
+							<p:inputText id="inscEst"
+								value="#{fornecedorBean.fornecedor.inscricaoEstadual}" />
+
+							<h:outputLabel value="CNPJ/CPF" for="cnpj_cpf" />
+							<p:inputText id="cnpj_cpf"
+								value="#{fornecedorBean.fornecedor.cnpjCpf}" />
+
+							<h:commandButton value="Salvar" action="#{fornecedorBean.gravar}">
+								<f:ajax render="@form :formFornecedor :formContato"
+									execute="@form"></f:ajax>
+							</h:commandButton>
+							<h:commandButton value="Cancelar"
+								action="fornecedor.xhtml?faces-redirect=true">
+							</h:commandButton>
+
+							<h:commandButton
+								action="#{fornecedorBean.remover(fornecedorBean.fornecedor.id)}"
+								onclick="return confirm('Realmente deseja remover esse fornecedor?\nEsse processo é irreversível!');"
+								value="Remover"
+								rendered="#{not empty fornecedorBean.fornecedor.id}">
+							</h:commandButton>
+						</h:panelGrid>
+					</fieldset>
+				</h:form>
+			</p:tab>
+			<p:tab title="#2 - Dados Contatos">
+
+				<h:form id="formContato">
+					<fieldset>
+						<legend>Dados de contato</legend>
+
+						<h:commandButton value="Adicionar"
+							action="#{fornecedorBean.adicionarContato}">
+							<f:ajax render="@form" execute="@form"></f:ajax>
+						</h:commandButton>
+
+						<p:dataTable value="#{fornecedorBean.fornecedor.contatos}"
+							var="contato" styleClass="dados" rowClasses="impar,par"
+							editable="true" editMode="cell" rowKey="contato.id"
+							id="listContatos" widgetVar="con">
+
+							<h:inputHidden value="#{contato.id}" />
+							<p:column headerText="Descrição">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{contato.descricao}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{contato.descricao}" style="width:100%"
+											label="Descrição" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="E-mail">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{contato.email}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{contato.email}" style="width:100%"
+											label="E-mail" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="Telefone">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{contato.telefone}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{contato.telefone}" style="width:100%"
+											label="Telefone" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column>
+								<f:facet name="header">Ação</f:facet>
+								<h:commandLink action="#{fornecedorBean.remover(contato)}"
+									value="Remover"
+									onclick="return confirm('Realmente deseja remover esse contato?\nEsse processo é irreversível!');">
+									<f:ajax render="@form"></f:ajax>
+								</h:commandLink>
+							</p:column>
+						</p:dataTable>
+					</fieldset>
+				</h:form>
+			</p:tab>
+			<p:tab title="#3 - Dados Endereços">
+
+				<h:form id="formEndereco">
+					<fieldset>
+						<legend>Dados do endereço</legend>
+
+						<h:commandButton value="Adicionar"
+							action="#{fornecedorBean.adicionarEndereco}">
+							<f:ajax render="@form" execute="@form"></f:ajax>
+						</h:commandButton>
+
+						<p:dataTable value="#{fornecedorBean.fornecedor.enderecos}"
+							var="endereco" styleClass="dados" rowClasses="impar,par"
+							editable="true" editMode="cell" rowKey="endereco.id"
+							id="listEnderecos" widgetVar="end">
+
+							<h:inputHidden value="#{endereco.id}" />
+							<p:column headerText="Descrição">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{endereco.descricao}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{endereco.descricao}" style="width:100%"
+											label="Descrição" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="Logradouro">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{endereco.logradouro}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{endereco.logradouro}" style="width:100%"
+											label="Logradouro" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="Bairro">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{endereco.bairro}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{endereco.bairro}" style="width:100%"
+											label="Bairro" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="Cidade">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{endereco.cidade}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{endereco.cidade}" style="width:100%"
+											label="Cidade" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="UF">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{endereco.uf}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{endereco.uf}" style="width:100%"
+											label="UF" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="Número">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{endereco.numero}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{endereco.numero}" style="width:100%"
+											label="Número" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="Complemento">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{endereco.complemento}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{endereco.complemento}"
+											style="width:100%" label="Complemento" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+							<p:column>
+								<h:commandLink action="#{fornecedorBean.remover(endereco)}"
+									value="Remover"
+									onclick="return confirm('Realmente deseja remover esse endereço?\nEsse processo é irreversível!');">
+									<f:ajax render="@form"></f:ajax>
+								</h:commandLink>
+							</p:column>
+						</p:dataTable>
+					</fieldset>
+				</h:form>
+
+			</p:tab>
+		</p:tabView>
+	</ui:define>
+</ui:composition>
+</html>
