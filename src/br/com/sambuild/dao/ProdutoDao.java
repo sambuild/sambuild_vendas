@@ -4,7 +4,12 @@ import br.com.sambuild.modelo.Produto;
 
 public class ProdutoDao extends Dao<Produto>{
 
-    public ProdutoDao() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1564121416864914188L;
+
+	public ProdutoDao() {
 	super(Produto.class);
     }
 

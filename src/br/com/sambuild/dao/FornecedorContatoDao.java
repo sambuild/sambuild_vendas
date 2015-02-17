@@ -17,9 +17,12 @@ import br.com.sambuild.modelo.FornecedorContato;
  */
 public class FornecedorContatoDao extends Dao<FornecedorContato> implements Serializable{
 
-    private static final long serialVersionUID = 1L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 5944052436099615310L;
 
-    public FornecedorContatoDao() {
+	public FornecedorContatoDao() {
 	super(FornecedorContato.class);
     }
 

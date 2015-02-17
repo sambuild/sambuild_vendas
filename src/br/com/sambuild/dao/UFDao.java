@@ -4,7 +4,12 @@ import br.com.sambuild.modelo.UF;
 
 public class UFDao extends Dao<UF> {
 
-    public UFDao() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4686400350665545687L;
+
+	public UFDao() {
 	super(UF.class);
     }
 

@@ -6,9 +6,12 @@ import javax.faces.event.PhaseListener;
 
 public class CicloDeVidaListener implements PhaseListener {
 
-    private static final long serialVersionUID = 1L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3340680759978199492L;
 
-    @Override
+	@Override
     public void afterPhase(PhaseEvent event) {
 	System.out.println("End phase: "+event.getPhaseId());
     }

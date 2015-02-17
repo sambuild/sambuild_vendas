@@ -21,9 +21,12 @@ import br.com.sambuild.modelo.FornecedorEndereco;
 @SessionScoped
 public class FornecedorBean implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7776798417996991464L;
 
-    @Inject
+	@Inject
     private FornecedorDao fornecedorDao;
 
     @Inject

@@ -22,9 +22,12 @@ import br.com.sambuild.modelo.UF;
 @ViewScoped
 public class ClienteBean implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3585519059309412106L;
 
-    private Cliente cliente = new Cliente();
+	private Cliente cliente = new Cliente();
 
     private Contato contato = new Contato();
 

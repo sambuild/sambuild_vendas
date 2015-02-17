@@ -12,9 +12,11 @@ import javax.persistence.EntityManager;
 @Transactional
 public class TransactionalInterceptor implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    @Inject
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5268174658875909253L;
+	@Inject
     private EntityManager manager;
 
     @AroundInvoke

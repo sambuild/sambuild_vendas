@@ -17,9 +17,12 @@ import br.com.sambuild.modelo.Usuario;
 @RequestScoped
 public class UsuarioBean implements Serializable {
     
-    private static final long serialVersionUID = 1L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1755512998154079196L;
 
-    @Inject
+	@Inject
     private UsuarioDao userDao;
 
     private Usuario usuario = new Usuario();

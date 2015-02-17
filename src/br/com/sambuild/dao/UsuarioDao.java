@@ -10,9 +10,12 @@ import br.com.sambuild.modelo.Usuario;
 
 public class UsuarioDao extends Dao<Usuario> implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    @Inject
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2481968508214533724L;
+	
+	@Inject
     private EntityManager manager;
     
     public UsuarioDao() {
@@ -27,8 +30,6 @@ public class UsuarioDao extends Dao<Usuario> implements Serializable {
 		.setParameter("pLogin", usuario.getEmail())
 		.setParameter("pSenha", usuario.getSenha());
 
-	boolean encontrado = !query.getResultList().isEmpty();
-
-	return encontrado;
+	return !query.getResultList().isEmpty();
     }
 }

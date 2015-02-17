@@ -13,9 +13,12 @@ import br.com.sambuild.modelo.Usuario;
 @RequestScoped
 public class LoginBean implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3012125520899945419L;
 
-    private Usuario usuario = new Usuario();
+	private Usuario usuario = new Usuario();
 
     @Inject
     private UsuarioDao userDao;

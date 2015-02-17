@@ -15,10 +15,12 @@ import br.com.sambuild.modelo.Fornecedor;
 
 public class DataModelFornecedor extends LazyDataModel<Fornecedor> {
 
-    @Inject
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1035818260601364912L;
+	@Inject
     private FornecedorDao dao;
-
-    private static final long serialVersionUID = 1L;
 
     @PostConstruct
     private void init() {
